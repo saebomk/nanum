@@ -12,8 +12,6 @@ import { localMiddleware } from "./middlewares";
 
 const app = express();
 
-app.set("view engine", "pug");
-
 // app.use(function (req, res, next) {
 //   res.setHeader(
 //     "Content-Security-Policy",
@@ -23,6 +21,11 @@ app.set("view engine", "pug");
 // });
 
 app.use(helmet());
+app.set("view engine", "pug");
+
+// Not a good practice for user-generated content (e.g. avatar) security, should be available for redirecting
+app.use("/uploads", express.static("uploads"));
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

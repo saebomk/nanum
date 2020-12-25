@@ -29,8 +29,6 @@ export const logout = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const users = (req, res) => res.render("users", { pageTitle: "Users" });
-
 export const userDetail = (req, res) =>
   res.render("userDetail", { pageTitle: "My Profile" });
 

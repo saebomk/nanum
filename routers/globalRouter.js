@@ -2,7 +2,6 @@ import express from "express";
 import {
   getJoin,
   getLogin,
-  login,
   logout,
   postJoin,
   postLogin,
