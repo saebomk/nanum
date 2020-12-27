@@ -3,7 +3,6 @@ import routes from "../routes";
 import {
   changePassword,
   editProfile,
-  users,
   userDetail,
 } from "../controllers/userController";
 

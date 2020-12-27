@@ -10,6 +10,9 @@ import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 import { localMiddleware } from "./middlewares";
 
+import passport from "passport";
+import "./passport";
+
 const app = express();
 
 // app.use(function (req, res, next) {
@@ -25,11 +28,15 @@ app.set("view engine", "pug");
 
 // Not a good practice for user-generated content (e.g. avatar) security, should be available for redirecting
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(localMiddleware);
 
 app.use(function (req, res, next) {
