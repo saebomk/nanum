@@ -1,0 +1,46 @@
+.videoBlock {
+  width: 560px;
+  padding: $spacing-small;
+  background-color: white;
+  border-radius: $spacing-xsmall;
+
+  .videoBlock__wrapper {
+    position: relative;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $spacing-large;
+  }
+
+  video {
+    width: 100%;
+    margin: auto 0;
+  }
+
+  #video-envelope {
+    width: 105%;
+    z-index: 100;
+    position: absolute;
+    bottom: 64px;
+    left: -14px;
+  }
+
+  .videoBlock__infoContainer {
+    margin: $spacing-medium 0;
+
+    .videoBlock__title {
+      font-size: $text-large;
+      font-weight: 600;
+      margin-bottom: $spacing-xsmall;
+    }
+    .videoBlock__views {
+      font-size: $text-small;
+      font-weight: 300;
+      margin-bottom: $spacing-small;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.form-container {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .record-container {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 50px;
+
+    input:not([type="file"]),
+    .fileUpload {
+      display: block;
+      width: 100%;
+      padding-top: $spacing-xsmall;
+      padding-bottom: $spacing-xsmall;
+
+      &:active {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+    textarea {
+      margin-bottom: 25px;
+    }
+    input[type="submit"] {
+      border: none;
+      width: 100%;
+      background-color: #f3a282;
+      border-radius: 4px;
+      color: white;
+    }
+  }
+
+  a {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .fileUpload {
+    label {
+      font-weight: 300;
+      margin-right: 10px;
+    }
+  }
+}

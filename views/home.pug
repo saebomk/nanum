@@ -1,12 +1,22 @@
-extends layouts/main.pug
+extends layouts/main
 include mixins/videoBlock
 
 block content
-    .videos
-        each video in videos
-            +videoBlock({
-                id: video.id,
-                title: video.title,
-                views: video.views,
-                videoFile:video.fileUrl,
-            })
+    .home__wrapper
+        .home-title
+            h1.home-videos__title Family 2020          
+                //- i.fas.fa-chevron-down 
+            h6.home-videos__views=`${videos.length} Videos`
+        .home-search
+            form(action=routes.search, method="get")
+                input(type="text", placeholder="Search by name", name="name")
+        .home-upload
+            a(href=`/videos${routes.upload}`) Upload Your Message
+        .home-videos
+            each video in videos
+                +videoBlock({
+                    id: video.id,
+                    title: video.title,
+                    views: video.views,
+                    videoFile:video.fileUrl,
+                })
