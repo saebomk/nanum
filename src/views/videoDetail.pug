@@ -5,7 +5,8 @@ block content
     .video-detail__container
         .video-player__container
             +videoPlayer({
-                src:video.fileUrl
+                src:video.fileUrl,
+                type:video.type
             })
         .video-info__container
             .video__info
@@ -14,29 +15,28 @@ block content
                     a(href=routes.userDetail(video.creator.id))=video.creator.name
                 h5.video__title=video.title
                 p.video__description=video.description
-                if video.views === 1
-                    span.video__views 1 view
-                else 
-                    span.video__views #{video.views} views
-                if loggedUser && video.creator.id === loggedUser.id
+                if video.type != "image/jpg" && video.type != "image/jpeg" && video.type != "image/png"
+                    if video.views === 1
+                        span.video__views 조회수 1
+                    else 
+                        span.video__views 조회수 #{video.views}
+                if loggedUser && video.creator.id === loggedUser.id    
                     a(href=routes.editVideo(video.id))
-                        button Edit video
+                        button 스토리 변경하기
         .video__comments
             if video.comments.length === 1
                 span.video__comment-number
-                    span#jsCommentNumber 1
-                    |  comment
+                    span#jsCommentNumber 1개의 댓글
             else
                 span.video__comment-number
                     span#jsCommentNumber=video.comments.length
-                    |  comments
+                        |개의 댓글
             form.add__comment#jsAddComment
-                input(type="text", placeholder="Add a comment")
+                input(type="text", placeholder="댓글을 적어보세요")
             ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
                     li
                         .comment-wrapper
                             span=comment.text
-                            span Author
-                            a.comment__delete(href=`${routes.deleteComment(comment.id)}`)
+                            a.comment__delete#jsDeleteComment
                                 i.fa.fa-trash

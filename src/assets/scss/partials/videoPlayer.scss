@@ -1,3 +1,14 @@
+.imgDiv {
+  position: relative;
+  z-index: 100;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: $spacing-xsmall;
+  }
+}
+
 .videoPlayer {
   position: relative;
   z-index: 100;

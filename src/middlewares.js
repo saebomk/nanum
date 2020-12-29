@@ -29,7 +29,8 @@ export const uploadVideo = multerVideo.single("videoFile");
 export const uploadAvatar = multerAvatar.single("avatar");
 
 export const localMiddleware = (req, res, next) => {
-  res.locals.siteName = "NoTube";
+  res.locals.siteName = "기억보관소";
+  res.locals.roomName = "2020 엄마아빠의 거제도 여행";
   res.locals.routes = routes;
   res.locals.loggedUser = req.user || null;
   next();

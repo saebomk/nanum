@@ -4,20 +4,21 @@ include mixins/videoBlock
 block content
     .home__wrapper
         .home-title
-            h1.home-videos__title Family Holidays 2020          
-            h6.home-videos__views=`${videos.length} Videos`
+            h1.home-videos__title=`${roomName}`  
+            h6.home-videos__views=`총 ${videos.length}개의 스토리`
         .home__toolbar
             .home-search
                 form(action=routes.search, method="get")
-                    input(type="text", placeholder="Search by Video Name", name="name")
+                    input(type="text", placeholder="스토리 제목으로 검색", name="name")
             .home-upload
                 a(href=`/videos${routes.upload}`)
-                    button Upload Your Message
+                    button 스토리를 올려보세요
         .home-videos
             each video in videos
                 +videoBlock({
                     id: video.id,
+                    type: video.type,
                     title: video.title,
                     views: video.views,
-                    videoFile:video.fileUrl,
+                    videoFile: video.fileUrl,
                 })

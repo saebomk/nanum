@@ -4,8 +4,8 @@ include mixins/videoBlock
 block content
     .home__wrapper
         .home-title
-            h1.home-videos__title Family Holidays 2020         
-            h6.home-videos__views=`${videos.length} Videos`
+            h1.home-videos__title=`${roomName}`    
+            h6.home-videos__views=`총 ${videos.length}개의 스토리`
         .home__toolbar
             .home-search
                 form(action=routes.search, method="get")
@@ -14,9 +14,9 @@ block content
                     i.fas.fa-times
             .home-upload
                 a(href=`/videos${routes.upload}`)
-                    button Upload Your Message
+                    button 스토리를 올려보세요
         if videos.length === 0
-                h5#noSearchResult No Videos Found
+                h5#noSearchResult 찾으시는 스토리가 없습니다
         else
             .home-videos
                 each item in videos

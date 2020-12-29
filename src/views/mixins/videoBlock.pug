@@ -2,8 +2,12 @@ mixin videoBlock(video = {})
     .videoBlock
         .videoBlock__wrapper
             a(href=routes.videoDetail(video.id))
-                video.videoBlock__thumbnail()
-                    source(src=video.videoFile, type="video/mp4")
-                .videoBlock__infoContainer 
-                    h4.videoBlock__title=video.title
-                    h6.videoBlock__views=`${video.views} Views`
+                if video.type == "image/jpg" || video.type == "image/jpeg" || video.type == "image/png"
+                    img(src=video.videoFile)
+                    .videoBlock__infoContainer 
+                        h4.videoBlock__title=video.title
+                else
+                    video.videoBlock__thumbnail()
+                        source(src=video.videoFile, type="video/mp4")
+                    .videoBlock__infoContainer 
+                        h4.videoBlock__title=video.title

@@ -10,12 +10,14 @@
   }
 
   form {
+    background-color: $color-bg-gray;
     width: 100%;
     max-width: 480px;
     margin-bottom: 50px;
 
     input:not([type="file"]),
     .fileUpload {
+      background-color: $color-bg-gray;
       display: block;
       width: 100%;
       padding-top: $spacing-xsmall;
@@ -29,9 +31,11 @@
         margin-bottom: 25px;
       }
     }
+
     textarea {
       margin-bottom: $spacing-medium;
     }
+
     input[type="submit"] {
       border: none;
       width: 100%;
@@ -42,8 +46,16 @@
   }
 
   a {
-    max-width: 320px;
+    max-width: 480px;
     width: 100%;
+
+    .form--delete {
+      border: none;
+      width: 100%;
+      border-radius: 4px;
+      background-color: #b03331;
+      color: white;
+    }
   }
 
   .fileUpload {

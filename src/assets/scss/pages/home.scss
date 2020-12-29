@@ -1,5 +1,6 @@
 .home__wrapper {
   width: 100%;
+  background-color: $color-bg-gray;
   max-width: 960px;
   display: grid;
   flex-direction: column;
@@ -65,7 +66,7 @@
     z-index: 100;
     width: 960px;
     display: grid;
-    gap: 64px $spacing-medium;
+    gap: $spacing-large $spacing-medium;
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
   }

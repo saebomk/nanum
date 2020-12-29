@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import path from "path";
+import flash from "express-flash";
 
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
@@ -38,7 +39,7 @@ app.set("view engine", "pug");
 // Not a good practice for user-generated content (e.g. avatar) security, should be available for redirecting
 app.set("views", path.join(__dirname, "views"));
 app.use("/static", express.static(path.join(__dirname, "static")));
-app.use(express.static("assets/img"));
+// app.use(express.static("assets/img"));
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -54,6 +55,7 @@ app.use(
     }),
   })
 );
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());

@@ -3,7 +3,8 @@ extends layouts/main
 block content
     .form-container
         form(action=`${routes.editVideo(video.id)}`, method="post")
-            input(type="text" placeholder="Title", name="title", value=video.title)
-            textarea(type="text" placeholder="Description", name="description")=video.description
-            input(type="Submit" value="Update Video")
-        a.form-container__link.form-container__link--delete(href=`${routes.deleteVideo(video.id)}`) Delete Video
+            input(type="text" placeholder="스토리 제목", name="title", value=video.title)
+            textarea(type="text" placeholder="떠오르는 것들을 적어주세요.", name="description")=video.description
+            input(type="Submit" value="스토리 변경")
+        a(href=`${routes.deleteVideo(video.id)}`).form--delete
+            button 스토리 삭제하기

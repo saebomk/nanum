@@ -16,14 +16,9 @@
       #logo-text {
         font-family: $logoFont;
         color: #323232;
-        font-size: $text-xlarge;
+        font-size: $text-large;
         font-weight: 600;
       }
-
-      //   &:nth-child(2) {
-      //     width: 100%;
-      //     justify-self: center;
-      //   }
 
       &:last-child {
         justify-self: end;

@@ -1,20 +1,20 @@
 header.header
     .header__wrapper
         .header__column
-            a(href=routes.home)#logo-text Vreetings
+            a(href=routes.home)#logo-text #{siteName}
         .header__column
             ul
                 if !loggedUser
                     li
-                        a(href=routes.join) Join
+                        a(href=routes.join) 회원가입
                     li
-                        a(href=routes.login) Sign In 
+                        a(href=routes.login) 로그인
                 else
                     li
-                        a(href=routes.home) Rooms
+                        a(href=routes.home) 방
                     li
-                        a(href=routes.home) My Giftbox
+                        a(href=routes.home) 선물
                     li
-                        a(href=routes.me) My Profile
+                        a(href=routes.me) 내 프로필
                     li
-                        a(href=routes.logout) Sign Out
+                        a(href=routes.logout) 로그아웃

@@ -9,6 +9,7 @@ const VideoSchema = new mongoose.Schema({
     type: String,
     required: "Tilte is required",
   },
+  type: String,
   description: String,
   views: {
     type: Number,

@@ -9,19 +9,19 @@ block content
         if user.id === loggedUser.id
             .user-profile__btns
                 a(href=`/users${routes.editProfile}`)
-                    button Edit Profile
+                    button 프로필 변경하기
                 a(href=`/users${routes.changePassword}`)
-                    button Change Password
+                    button 비밀번호 변경하기
                 a(href=`/users${routes.changePassword}`)
-                    button.secondary Sign Out
+                    button.secondary 로그아웃
         .home-rooms
-            h1.home-rooms__title My Rooms
+            h1.home-rooms__title 내가 속한 방들
             .rooms
-                h2.home-room__title Familly Holidays 2020
-                h6.home-room__views 4 members
+                h2.home-room__title=`${roomName}`
+                h6.home-room__members 4명 멤버
             .rooms
-                h2.home-room__title Jung's Familly
-                h6.home-room__views 8 members
+                h2.home-room__title 권씨네 가족
+                h6.home-room__members 8명 멤버
             .rooms
-                h2.home-room__title Colleagues at Acme
-                h6.home-room__views 7 members
+                h2.home-room__title 배드민턴 동호회 사람들
+                h6.home-room__members 7명 멤버
