@@ -16,7 +16,7 @@ main {
   width: 100%;
   background-color: white;
   padding-top: $spacing-xlarge;
-  max-width: 640px;
+  max-width: 960px;
   margin: 0 auto;
   min-height: 70vh;
   display: grid;
@@ -39,8 +39,8 @@ input:not([type="file"]),
 textarea,
 .fileUpload {
   justify-self: center;
-  height: 28px;
   width: 100%;
+  height: 32px;
   border: none;
   font-size: 14px;
   border-bottom: 1px #323232 solid;
@@ -60,12 +60,15 @@ textarea,
   }
 }
 
+textarea {
+  height: 80px;
+}
+
 button {
   width: 100%;
   border: none;
   border-radius: 4px;
-  background-color: #f3a282;
-  // margin: 8px;
+  background-color: $color-pink;
   color: white;
 }
 

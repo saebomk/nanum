@@ -2,7 +2,7 @@ mixin videoBlock(video = {})
     .videoBlock
         .videoBlock__wrapper
             a(href=routes.videoDetail(video.id))
-                video.videoBlock__thumbnail(controls=true,width="300")
+                video.videoBlock__thumbnail()
                     source(src=video.videoFile, type="video/mp4")
                 img#video-envelope(src="test.png", alt="envelope")
                 .videoBlock__infoContainer 

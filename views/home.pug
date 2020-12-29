@@ -4,14 +4,15 @@ include mixins/videoBlock
 block content
     .home__wrapper
         .home-title
-            h1.home-videos__title Family 2020          
-                //- i.fas.fa-chevron-down 
+            h1.home-videos__title Family Holidays 2020          
             h6.home-videos__views=`${videos.length} Videos`
-        .home-search
-            form(action=routes.search, method="get")
-                input(type="text", placeholder="Search by name", name="name")
-        .home-upload
-            a(href=`/videos${routes.upload}`) Upload Your Message
+        .home__toolbar
+            .home-search
+                form(action=routes.search, method="get")
+                    input(type="text", placeholder="Search by Video Name", name="name")
+            .home-upload
+                a(href=`/videos${routes.upload}`)
+                    button Upload Your Message
         .home-videos
             each video in videos
                 +videoBlock({

@@ -1,15 +1,15 @@
 .home__wrapper {
-  width: 560px;
-
+  width: 100%;
+  max-width: 960px;
   display: grid;
   flex-direction: column;
   justify-content: center;
+  align-self: start;
 
   .home-title {
-    padding: $spacing-small;
+    padding: $spacing-small 0;
     width: 100%;
     font-size: $text-large;
-    // margin: $spacing-large 0;
 
     .home-videos__title {
       font-size: $text-xxlarge;
@@ -22,33 +22,51 @@
     }
   }
 
-  .home-search {
-    width: 240px;
-    margin: $spacing-small;
-    padding: 0 $spacing-small;
-    justify-self: flex-end;
-    h3 {
-      justify-self: flex-end;
-      margin: 8px 0;
+  .home__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .home-upload {
+      width: 100%;
+      max-width: 240px;
+      max-height: 32px;
+
+      a button {
+        justify-self: end;
+        width: 240px;
+        margin-bottom: $spacing-medium;
+      }
+    }
+
+    .home-search {
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      align-items: center;
+      width: 320px;
+
+      h3 {
+        margin: 8px 0;
+      }
     }
   }
 
-  .home-upload {
-    margin: $spacing-small;
-    padding: $spacing-small;
-    background-color: #f8e8d3;
-    border-radius: 4px;
+  #noSearchResult {
+    margin-top: $spacing-xlarge;
+    width: 960px;
     text-align: center;
-
-    &:hover {
-      transform: scale(1.02);
-    }
+    align-content: center;
+    justify-items: center;
   }
 
   .home-videos {
-    width: 100%;
+    margin-top: $spacing-xlarge;
+    z-index: 100;
+    width: 960px;
     display: grid;
+    gap: 64px $spacing-medium;
     justify-items: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

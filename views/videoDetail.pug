@@ -3,22 +3,24 @@ include mixins/videoPlayer
 
 block content
     .video-detail__container
-        +videoPlayer({
-            src:video.fileUrl
-        })
-        .video__info
-            if loggedUser && video.creator.id === loggedUser.id
-                a(href=routes.editVideo(video.id))
-                    button Edit video
-            h5.video__title=video.title
-            p.video__description=video.description
-            if video.views === 1
-                span.video__views 1 view
-            else 
-                span.video__views #{video.views} views
-            .video__author
-                |Uploaded by 
-                a(href=routes.userDetail(video.creator.id))=video.creator.name
+        .video-player__container
+            +videoPlayer({
+                src:video.fileUrl
+            })
+        .video-info__container
+            .video__info
+                .video__author
+                    | From    
+                    a(href=routes.userDetail(video.creator.id))=video.creator.name
+                h5.video__title=video.title
+                p.video__description=video.description
+                if video.views === 1
+                    span.video__views 1 view
+                else 
+                    span.video__views #{video.views} views
+                if loggedUser && video.creator.id === loggedUser.id
+                    a(href=routes.editVideo(video.id))
+                        button Edit video
         .video__comments
             if video.comments.length === 1
                 span.video__comment-number
@@ -33,5 +35,8 @@ block content
             ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
                     li
-                        span=comment.text
-                        a.comment__delete(href=`${routes.deleteComment(comment.id)}`) Delete Comment
+                        .comment-wrapper
+                            span=comment.text
+                            span Author
+                            a.comment__delete(href=`${routes.deleteComment(comment.id)}`)
+                                i.fa.fa-trash

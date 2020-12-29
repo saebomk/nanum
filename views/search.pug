@@ -4,22 +4,25 @@ include mixins/videoBlock
 block content
     .home__wrapper
         .home-title
-            h1.home-videos__title Family 2020          
+            h1.home-videos__title Family Holidays 2020         
             h6.home-videos__views=`${videos.length} Videos`
-        .home-upload
-            a(href=`/videos${routes.upload}`) Upload Your Message
-        .home-search
-            form(action=routes.search, method="get")
-                input(type="text", placeholder="Search by name", name="name")
-            h3 Search by #{searchQuery}
-            a(href=routes.home) View All
-        .search__videos
-            if videos.length === 0
-                h5 No Videos Found
-            each item in videos
-                +videoBlock({
-                    id: item.id,
-                    title: item.title,
-                    views: item.views,
-                    videoFile:item.fileUrl,
-                })            
+        .home__toolbar
+            .home-search
+                form(action=routes.search, method="get")
+                    input(type="text", placeholder=`${searchQuery}`, name="name")
+                a(href=routes.home)
+                    i.fas.fa-times
+            .home-upload
+                a(href=`/videos${routes.upload}`)
+                    button Upload Your Message
+        if videos.length === 0
+                h5#noSearchResult No Videos Found
+        else
+            .home-videos
+                each item in videos
+                    +videoBlock({
+                        id: item.id,
+                        title: item.title,
+                        views: item.views,
+                        videoFile:item.fileUrl,
+                    })            
