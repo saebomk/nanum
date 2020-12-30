@@ -3,8 +3,12 @@ include mixins/videoBlock
 
 block content
     .home__wrapper
+        .home__nav
+            select(name="room", value=`${roomName}`)
+                option(value=`${roomName}`) #{roomName}
+                option(value="권씨네 가족", disabled) 권씨네 가족
+                option(value="배드민턴 동호회 사람들", disabled) 배드민턴 동호회 사람들
         .home-title
-            h1.home-videos__title=`${roomName}`  
             h6.home-videos__views=`총 ${videos.length}개의 스토리`
         .home__toolbar
             .home-search

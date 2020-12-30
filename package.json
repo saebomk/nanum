@@ -1,7 +1,7 @@
 {
   "name": "notube",
   "version": "1.0.0",
-  "description": "Youtube clone app with nodejs",
+  "description": "Media creation app with Node JS and MongoDB",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
